@@ -1,0 +1,55 @@
+
+<html>
+<head>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASTA SOS</title>  
+    <link href="https://fluentdesignforweb.github.io/fluent.css" type="text/css" rel="stylesheet" />
+    <link href="https://fluentdesignforweb.github.io/fluent-icons.css" type="text/css" rel="stylesheet" />
+    <link href="../static/css/main.css" type="text/css" rel="stylesheet" />
+    <script src="https://fluentdesignforweb.github.io/fluent.js"></script>
+</head>  
+<body class="m2s"> 
+
+    <div class="column large6 medium9 small12 center">
+        <div class="pivot_container" style="padding: 6px;"> 
+            <a class="pivot_button" href="#">
+                <img src="../static/img/icon.jpg" class="icon" />
+            </a>
+            <button class="right" onclick="openside1();" style="background: transparent; color: #fcfcfc;">
+                <i class="ms-Icon ms-Icon--GlobalNavButton" style="pafont-size: 26px; font-weight: bold;"></i>
+            </button>
+        </div>
+        <center>
+        <h5><center>Multi Line to Single Line Convertor</center></h5>
+        <p>Upload a Multiline fasta file to convert it into Singleline fasta File</p></center>
+        <form action = "/success" method = "post" enctype="multipart/form-data">  
+
+            <div class="upload">
+                <input type="file" name="file" class="upload_field" >
+                <img style="border:none;height:300px;width:300ps" src="../static/img/upload.png" alt="" class="upload_icon" /></div>
+            </div>
+
+            <button class="convert center large frost_container" onmouseover="frosting();">
+                <span class="frost">Convert</span>
+            </button>
+        </form>  
+    </div>
+
+
+    <div class="sidepanel_container" id="side1">
+        <div class="sidepanel_content zi3 right">
+            <div class="panel_container">
+                <br /><br />
+                <a href="{{ url_for('upload') }}"><div class="panel_item">M2S FASTA Convertor</div></a>
+                <a href="{{ url_for('proteinfind') }}"><div class="panel_item">Protein Find</div></a>
+                <a href="{{ url_for('dnafind') }}"><div class="panel_item">DNA Find</div></a>
+            </div>
+            <button class="primary_red close" onclick="closeside1();">
+                <i class="ms-Icon ms-Icon--ChromeClose circular"></i>
+            </button>
+
+            
+        </div>
+    </div>
+</body>  
+</html>
